@@ -1,4 +1,4 @@
-# Rookie Birdies / 菜鸟羽球社 — Website V3
+# Rookie Birdies / 菜鸟羽球社 — Website V6.3
 
 Static GitHub Pages website for the Rookie Birdies badminton community.
 

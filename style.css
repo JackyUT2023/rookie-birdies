@@ -100,3 +100,61 @@ footer{background:var(--navy);color:white}.footer{min-height:120px;display:flex;
   .brand img{width:100%;max-width:270px;max-height:78px;object-fit:contain;object-position:left center}
   .nav-links{top:100px;right:12px;width:calc(100vw - 24px)}
 }
+
+
+/* V6.3 — iPhone Safari / WeChat WebView mobile compatibility */
+html{
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+}
+body{
+  min-width:0;
+  overflow-x:hidden;
+}
+img{max-width:100%}
+
+/* Keep the header visually consistent across iOS browsers. */
+@media(max-width:560px){
+  .site-header{
+    height:88px;
+    min-height:88px;
+  }
+  .nav{
+    height:88px;
+    min-height:88px;
+    width:100%;
+    padding-left:18px;
+    padding-right:14px;
+    box-sizing:border-box;
+  }
+  .brand{
+    width:min(245px,calc(100vw - 88px));
+    height:72px;
+    flex:0 1 auto;
+    overflow:hidden;
+  }
+  .brand img{
+    display:block;
+    width:auto;
+    height:auto;
+    max-width:100%;
+    max-height:70px;
+    object-fit:contain;
+    object-position:left center;
+  }
+  .menu{
+    flex:0 0 48px;
+    width:48px;
+    height:48px;
+    margin-left:auto;
+  }
+  .nav-links{
+    top:96px;
+  }
+}
+
+/* Very narrow iPhones: preserve menu room without shrinking the whole page. */
+@media(max-width:390px){
+  .nav{padding-left:14px;padding-right:10px}
+  .brand{width:calc(100vw - 82px)}
+}
