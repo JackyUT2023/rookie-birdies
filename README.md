@@ -1,16 +1,23 @@
-# Rookie Birdies / 菜鸟羽球社
+# Rookie Birdies / 菜鸟羽球社 — Website V3
 
-Static bilingual community website ready for GitHub Pages.
+Static GitHub Pages website for the Rookie Birdies badminton community.
 
-## Publish on GitHub Pages
-1. Create a new GitHub repository (for example `rookie-birdies`).
-2. Upload `index.html`, `style.css`, `script.js`, and the `images` folder to the repository root.
-3. In GitHub: **Settings → Pages → Build and deployment → Deploy from a branch**.
-4. Select the `main` branch and `/ (root)`, then Save.
+## Publish / update
+Upload the contents of this folder to the root of the `rookie-birdies` GitHub repository and commit the changes. GitHub Pages can deploy from `main` → `/(root)`.
 
-## Customize before publishing
-- In `index.html`, edit the Join Us section with your WeChat/contact method.
-- Replace the placeholder emoji mascot with a finalized transparent mascot/logo file when ready.
-- Update the current 80+ member count when needed.
+## V3 highlights
+- New navy/yellow brand system
+- Mascot-led hero section
+- Better mobile layout
+- Community culture, drop-in flow, voluntary fund, future Cup
+- WeChat QR join modal
 
-The included `images/brand-concept.png` is the current logo concept sheet/reference image.
+
+## V4 Brand Assets
+- `images/rookie-birdies-logo.png` — full logo
+- `images/rookie-birdies-horizontal.png` — horizontal/header logo
+- `images/rookie-birdies-icon.png` — avatar/icon set crop
+- `images/favicon.png` — browser icon
+- `images/wechat-qr.jpg` — join-community QR
+
+GitHub Pages: deploy `main` branch from `/(root)`.
