@@ -1,3 +1,45 @@
-const menu=document.querySelector('.menu');const links=document.querySelector('.links');menu?.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',open)});document.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));document.getElementById('year').textContent=new Date().getFullYear();
+const menu = document.querySelector('.menu');
+const links = document.querySelector('.nav-links');
 
-const qrModal=document.getElementById('qrModal');const wechatBtn=document.getElementById('wechatBtn');const closeQr=()=>{qrModal.classList.remove('open');qrModal.setAttribute('aria-hidden','true');document.body.classList.remove('modal-open')};wechatBtn?.addEventListener('click',e=>{e.preventDefault();qrModal.classList.add('open');qrModal.setAttribute('aria-hidden','false');document.body.classList.add('modal-open')});document.querySelectorAll('[data-close-qr]').forEach(el=>el.addEventListener('click',closeQr));document.addEventListener('keydown',e=>{if(e.key==='Escape')closeQr()});
+if (menu && links) {
+  menu.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    menu.setAttribute('aria-expanded', String(open));
+    menu.textContent = open ? '×' : '☰';
+  });
+
+  document.querySelectorAll('.nav-links a').forEach((link) => {
+    link.addEventListener('click', () => {
+      links.classList.remove('open');
+      menu.setAttribute('aria-expanded', 'false');
+      menu.textContent = '☰';
+    });
+  });
+}
+
+const wechatBtn = document.querySelector('#wechatBtn');
+const qrModal = document.querySelector('#qrModal');
+
+function closeQR() {
+  if (!qrModal) return;
+  qrModal.classList.remove('open');
+  qrModal.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('modal-open');
+}
+
+if (wechatBtn && qrModal) {
+  wechatBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    qrModal.classList.add('open');
+    qrModal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+  });
+
+  document.querySelectorAll('[data-close-qr]').forEach((el) => {
+    el.addEventListener('click', closeQR);
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeQR();
+  });
+}
